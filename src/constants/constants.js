@@ -2,20 +2,20 @@ import { getCards, getProfile } from '../components/api.js';
 
 const cardsContainer = document.querySelector('.places__list');
 
-const editBtn = document.querySelector('.profile__edit-button');
+const profileEditBtn = document.querySelector('.profile__edit-button');
 const editPopup = document.querySelector('.popup_type_edit');
-const editFormProfile = document.forms['edit-profile'];
-const editFormNameProfileInput = editFormProfile.elements.name;
-const editFormDescriptionProfileInput = editFormProfile.elements.description;
+const profileEditForm = document.forms['edit-profile'];
+const editFormNameProfileInput = profileEditForm.elements.name;
+const editFormDescriptionProfileInput = profileEditForm.elements.description;
 const profileName = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
-const profileEditSubmitBtn = editFormProfile.querySelector('.popup__button');
+const profileEditSubmitBtn = profileEditForm.querySelector('.popup__button');
 const profileImage = document.querySelector('.profile__image');
 
 const popupFullImg = document.querySelector('.popup_type_image');
 const popupImg = document.querySelector('.popup__image');
 const popupCaption = document.querySelector('.popup__caption');
-const popupCloseBtn = document.querySelectorAll('.popup__close');
+const popupCloseBtns = document.querySelectorAll('.popup__close');
 
 const popupAddCard = document.querySelector('.popup_type_new-card');
 const popupAddBtn = document.querySelector('.profile__add-button');
@@ -23,7 +23,7 @@ const cardAddForm = document.forms['new-place'];
 const cardAddNameInput = cardAddForm.elements['place-name'];
 const cardAddLinkInput = cardAddForm.elements.link;
 
-const cardSubmitBtn = cardAddForm.querySelector('.popup__button');
+const cardSubmitBtns = cardAddForm.querySelector('.popup__button');
 const initialDataResponsePromises = [getCards(), getProfile()];
 
 const cardDeletePopup = document.querySelector('.popup_type_delete-card');
@@ -46,9 +46,9 @@ const validationConfig = {
 
 export {
   cardsContainer,
-  editBtn,
+  profileEditBtn,
   editPopup,
-  editFormProfile,
+  profileEditForm,
   editFormNameProfileInput,
   editFormDescriptionProfileInput,
   profileName,
@@ -56,7 +56,7 @@ export {
   popupFullImg,
   popupImg,
   popupCaption,
-  popupCloseBtn,
+  popupCloseBtns,
   popupAddCard,
   popupAddBtn,
   cardAddForm,
@@ -64,7 +64,7 @@ export {
   cardAddLinkInput,
   profileEditSubmitBtn,
   profileImage,
-  cardSubmitBtn,
+  cardSubmitBtns,
   initialDataResponsePromises,
   cardDeletePopup,
   cardDeleteForm,

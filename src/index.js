@@ -5,9 +5,9 @@ import { enableValidation, clearValidation } from './components/validation.js';
 import { updateProfile, postNewCard, deleteCard, updateProfileImage } from './components/api.js';
 import {
   cardsContainer,
-  editBtn,
+  profileEditBtn,
   editPopup,
-  editFormProfile,
+  profileEditForm,
   editFormNameProfileInput,
   editFormDescriptionProfileInput,
   profileName,
@@ -15,7 +15,7 @@ import {
   popupFullImg,
   popupImg,
   popupCaption,
-  popupCloseBtn,
+  popupCloseBtns,
   popupAddCard,
   popupAddBtn,
   cardAddForm,
@@ -23,7 +23,7 @@ import {
   cardAddLinkInput,
   profileEditSubmitBtn,
   profileImage,
-  cardSubmitBtn,
+  cardSubmitBtns,
   initialDataResponsePromises,
   cardDeletePopup,
   cardDeleteForm,
@@ -54,8 +54,8 @@ function addCard(card, list) {
   list.append(createdCard);
 }
 
-editBtn.addEventListener('click', () => {
-  clearValidation(editFormProfile, validationConfig);
+profileEditBtn.addEventListener('click', () => {
+  clearValidation(profileEditForm, validationConfig);
   editFormNameProfileInput.value = profileName.textContent;
   editFormDescriptionProfileInput.value = profileDescription.textContent;
   openModal(editPopup);
@@ -68,7 +68,7 @@ function handleOpenFullImage(evt) {
   openModal(popupFullImg);
 }
 
-popupCloseBtn.forEach((button) => {
+popupCloseBtns.forEach((button) => {
   button.addEventListener('click', handleCloseByButton);
 })
 
@@ -89,7 +89,7 @@ function handleSubmitProfileForm(evt) {
     })
 }
 
-editFormProfile.addEventListener('submit', handleSubmitProfileForm);
+profileEditForm.addEventListener('submit', handleSubmitProfileForm);
 
 popupAddBtn.addEventListener('click', () => {
   clearValidation(cardAddForm, validationConfig);
@@ -99,7 +99,7 @@ popupAddBtn.addEventListener('click', () => {
 
 function handleAddCardFromForm(evt) {
   evt.preventDefault();
-  cardSubmitBtn.textContent = "Сохранение...";
+  cardSubmitBtns.textContent = "Сохранение...";
   const name = cardAddNameInput.value;
   const link = cardAddLinkInput.value;
   postNewCard(name, link)
@@ -111,7 +111,7 @@ function handleAddCardFromForm(evt) {
       console.error(error);
     })
     .finally(() => {
-      cardSubmitBtn.textContent = "Сохранить";
+      cardSubmitBtns.textContent = "Сохранить";
     })
 
 }
