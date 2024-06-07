@@ -5,8 +5,8 @@ const cardsContainer = document.querySelector('.places__list');
 const profileEditBtn = document.querySelector('.profile__edit-button');
 const editPopup = document.querySelector('.popup_type_edit');
 const profileEditForm = document.forms['edit-profile'];
-const editFormNameProfileInput = profileEditForm.elements.name;
-const editFormDescriptionProfileInput = profileEditForm.elements.description;
+const profileInputEditFormName = profileEditForm.elements.name;
+const profileInputEditFormDescription = profileEditForm.elements.description;
 const profileName = document.querySelector('.profile__title');
 const profileDescription = document.querySelector('.profile__description');
 const profileEditSubmitBtn = profileEditForm.querySelector('.popup__button');
@@ -49,8 +49,8 @@ export {
   profileEditBtn,
   editPopup,
   profileEditForm,
-  editFormNameProfileInput,
-  editFormDescriptionProfileInput,
+  profileInputEditFormName,
+  profileInputEditFormDescription,
   profileName,
   profileDescription,
   popupFullImg,

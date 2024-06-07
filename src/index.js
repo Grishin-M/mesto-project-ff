@@ -8,8 +8,8 @@ import {
   profileEditBtn,
   editPopup,
   profileEditForm,
-  editFormNameProfileInput,
-  editFormDescriptionProfileInput,
+  profileInputEditFormName,
+  profileInputEditFormDescription,
   profileName,
   profileDescription,
   popupFullImg,
@@ -56,8 +56,8 @@ function addCard(card, list) {
 
 profileEditBtn.addEventListener('click', () => {
   clearValidation(profileEditForm, validationConfig);
-  editFormNameProfileInput.value = profileName.textContent;
-  editFormDescriptionProfileInput.value = profileDescription.textContent;
+  profileInputEditFormName.value = profileName.textContent;
+  profileInputEditFormDescription.value = profileDescription.textContent;
   openModal(editPopup);
 });
 
@@ -75,10 +75,10 @@ popupCloseBtns.forEach((button) => {
 function handleSubmitProfileForm(evt) {
   evt.preventDefault();
   profileEditSubmitBtn.textContent = "Сохранение...";
-  updateProfile(editFormNameProfileInput.value, editFormDescriptionProfileInput.value)
+  updateProfile(profileInputEditFormName.value, profileInputEditFormDescription.value)
     .then((data) => {
-      profileName.textContent = editFormNameProfileInput.value;
-      profileDescription.textContent = editFormDescriptionProfileInput.value;
+      profileName.textContent = profileInputEditFormName.value;
+      profileDescription.textContent = profileInputEditFormDescription.value;
       closeModal(editPopup);
     })
     .catch((error) => {
